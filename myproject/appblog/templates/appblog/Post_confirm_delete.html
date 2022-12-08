@@ -1,0 +1,23 @@
+{% extends 'appblog/base.html' %}
+
+{% block titulo %}
+Borrar post
+{% endblock %}
+
+{% block contenido %}
+
+
+<h1> Borrar Post... </h1>
+<br/>
+<h3> Borrar: {{object.titulo}}</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <strong> Estas seguro que quieres borrar el post?</strong>
+    <a href="{% url 'inicio'%}">Volver al listado</a><br/>
+    <input type="submit" value="Borrar">
+    
+</form>
+        
+</div>
+{% endblock %}

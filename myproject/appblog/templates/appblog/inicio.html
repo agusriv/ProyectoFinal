@@ -4,12 +4,12 @@
 {% block contenido %}
 
 
-<h1> Post </h1>
+<h1> Posts </h1>
 <ul>
 {% for Post in object_list %}   
-    <li><a href="{% url 'detalle-post' Post.id %}"
-    >{{ Post.titulo }}</a> - {{ Post.autor.first_name }} 
-    {{Post.autor.last_name }} - <small><a href="{% url 'actualizar-post' Post.id %}">Editar</a></small>
+    <li><a href="{% url 'detalle-post' Post.id %}" >{{ Post.titulo }}</a> - {{ Post.autor.first_name }} 
+        {{Post.autor.last_name }} - <small><a href="{% url 'actualizar-post' Post.id %}">Editar</a></small>
+        <small><a href="{% url 'borrar-post' Post.id %}">Borrar</a></small>
     <br/>
     {{ Post.cuerpo }}</li>
 {% endfor %}
