@@ -1,0 +1,8 @@
+<h1> Post </h1>
+<ul>
+    {% for Post in object_list %}
+    <li>{{ Post.titulo }} -> {{ Post.autor }}<br/>
+    {{ Post.cuerpo }}</li>
+
+{% endfor %}
+</ul>
