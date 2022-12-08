@@ -1,8 +1,17 @@
+{% extends 'appblog/base.html' %}
+
+
+{% block contenido %}
+
+
 <h1> Post </h1>
 <ul>
-    {% for Post in object_list %}
-    <li>{{ Post.titulo }} -> {{ Post.autor }}<br/>
+{% for Post in object_list %}   
+    <li><a href="{% url 'detalle-post' Post.pk %}">{{ Post.titulo }}</a>
+    {{ Post.autor.first_name }} 
+    {{Post.autor.last_name }} <br/>
     {{ Post.cuerpo }}</li>
-
 {% endfor %}
 </ul>
+
+{% endblock %}

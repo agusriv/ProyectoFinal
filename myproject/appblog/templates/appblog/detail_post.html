@@ -1,0 +1,27 @@
+{% extends 'appblog/base.html' %}
+
+{% block titulo %}
+{{object.titulo_tag}}
+{% endblock %}
+
+{% block contenido %}
+
+<h1> {{object.titulo}} </h1>
+<small>Creado por: {{ object.autor.first_name}}
+{{object.autor.last_name}}</small><br/>
+<hr>
+<br/>
+{{ object.cuerpo}}
+
+<br/><br/>
+<a href="{% url 'inicio' %}" class="btn btn-secondary"> Volver </a>
+
+{% endblock %}
+ 
+
+
+
+
+
+
+
