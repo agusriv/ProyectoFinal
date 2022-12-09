@@ -12,10 +12,10 @@
         
         
             {% if request.user.is_authenticated %}
-                {% if user.id == object.autor.id %}
-                    <a href="{% url 'actualizar-post' object.id %}">Editar</a>
-                    <a href="{% url 'borrar-post' object.id %}">Borrar</a>
-                {% endif%}
+                
+                <a href="{% url 'actualizar-post' object.id %}">Editar</a>
+                <a href="{% url 'borrar-post' object.id %}">Borrar</a>
+                
             {% endif %}
         
     

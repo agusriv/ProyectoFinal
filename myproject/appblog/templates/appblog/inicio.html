@@ -10,12 +10,12 @@
     <li><a href="{% url 'detalle-post' Post.id %}" >{{ Post.titulo }}</a> - {{ Post.autor.first_name }} 
         {{Post.autor.last_name }} -  {{ Post.fecha }} 
         
+        
         {% if request.user.is_authenticated %}
-            {% if user.id == Post.autor.id %}
-                <small><a href="{% url 'actualizar-post' Post.id %}">Editar</a></small>
-                <small><a href="{% url 'borrar-post' Post.id %}">Borrar</a></small>
-            {% endif %}
+            <small><a href="{% url 'actualizar-post' Post.id %}">Editar</a></small>
+            <small><a href="{% url 'borrar-post' Post.id %}">Borrar</a></small>
         {% endif %}
+        
         
     <br/>
 Descripcion: {{ Post.descripcion }}</li>
