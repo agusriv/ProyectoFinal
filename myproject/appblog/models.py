@@ -10,9 +10,12 @@ class Post(models.Model):
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     cuerpo = models.TextField()
     fecha = models.DateField(auto_now_add=True)
+    descripcion = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.titulo} + ' | ' + str{self.autor}"
+        return self.titulo + ' | ' + str(self.autor)
     
     def get_absolute_url(self):
         return reverse ('inicio')
+
+

@@ -6,14 +6,25 @@ Crea un nuevo post!
 
 {% block contenido %}
 
+{% if request.user.is_authenticated %}
+    {% if user.id == object.autor.id %}
+        <h1> Agregar Posts... </h1>
+        <form method="post">
 
-<h1> Agregar Posts... </h1>
-<form method="post">
-
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Crear/Actualizar">
-</form>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Crear/Actualizar">
+        </form>
         
-</div>
+        </div>
+    {% else %}
+        No has iniciado secion
+
+    {% endif %}
+{% else %}
+
+No has iniciado secion
+
+{% endif %}
+
 {% endblock %}
