@@ -6,12 +6,10 @@ from django.urls import reverse_lazy
 
 
 from myproject.settings import BASE_DIR
-# Create your views here.
 
-"""
-def inicio(request):
-   return render(request, "appblog/inicio.html")
-   """
+def about(request):
+   return render(request, "appblog/about.html")
+
 
 class PostList(ListView):
     model = Post
