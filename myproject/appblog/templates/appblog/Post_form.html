@@ -9,7 +9,7 @@ Crea un nuevo post!
 {% if request.user.is_authenticated %}
     
     <h1> Agregar Posts... </h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
 
     {% csrf_token %}
     {{form.media}}

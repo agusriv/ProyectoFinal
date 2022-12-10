@@ -22,7 +22,12 @@
     </small><br/>
     <hr>
     <br/>
-{{ object.cuerpo|safe}}
+    {% if object.imagen_cabezera %}
+    <img src="{{ object.imagen_cabezera.url }}">
+    {% endif %} 
+    
+    <br/><br/>
+    {{ object.cuerpo|safe }}
 
 <br/><br/>
 <a href="{% url 'inicio' %}" class="btn btn-secondary"> Volver </a>

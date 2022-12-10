@@ -7,6 +7,7 @@ from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     titulo = models.CharField(max_length=60)
+    imagen_cabezera = models.ImageField(null=True, blank=True, upload_to="imagenes/")
     titulo_tag = models.CharField(max_length=60)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     cuerpo = RichTextField(blank=True, null=True)
