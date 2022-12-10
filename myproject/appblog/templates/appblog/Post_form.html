@@ -12,7 +12,8 @@ Crea un nuevo post!
     <form method="post">
 
     {% csrf_token %}
-    {{form.as_p}}
+    {{form.media}}
+    {{form.as_p }}
     <input type="submit" value="Crear/Actualizar">
     </form>
         
