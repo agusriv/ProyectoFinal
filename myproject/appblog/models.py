@@ -20,4 +20,19 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse ('inicio')
 
+class Perfil(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField()
+    perfil_imagen = models.ImageField(null=True, blank=True, upload_to="imagenes/perfil/")
+    Instagram_url = models.CharField(max_length=255, null=True, blank=True)
+    github_url =  models.CharField(max_length=255, null=True, blank=True)
+    fb_url = models.CharField(max_length=255, null=True, blank=True)
+    web_url =  models.CharField(max_length=255, null=True, blank=True)
+    Twitter_url = models.CharField(max_length=255, null=True, blank=True)
+    
+
+    def __str__(self):
+        return str(self.user)
+    
+
 
