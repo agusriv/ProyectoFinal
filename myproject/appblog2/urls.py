@@ -1,6 +1,5 @@
 from django.urls import path
 from appblog2.views import UserRegisterView, UserEditView, PasswordsCambiarView
-from django.contrib.auth import views as auth_views
 from appblog2.views import password_succes
 
 
