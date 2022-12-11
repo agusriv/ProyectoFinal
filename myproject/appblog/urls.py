@@ -2,6 +2,7 @@ from django.urls import path
 from appblog.views import PostList, PostDetail, PostCreate, PostUpdate, PostDelate, about
 
 
+
 urlpatterns = [
     path('', PostList.as_view(), name="inicio"),
     path('about/', about, name='about'),
