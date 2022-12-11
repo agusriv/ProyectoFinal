@@ -43,3 +43,12 @@ class UserEditView(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
+
+class EditProfilePageView(generic.UpdateView):
+
+    model = Perfil
+    template_name = 'registration/edit_profile_page.html'
+    fields = ['user', 'bio', 'perfil_imagen', 'Instagram_url', 'github_url', 'fb_url', 'web_url', 'Twitter_url']
+    success_url = reverse_lazy('inicio')
+
+
