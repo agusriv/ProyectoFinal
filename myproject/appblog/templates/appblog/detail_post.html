@@ -34,7 +34,55 @@
 
 <br/><br/>
 
-<img src="{{ object.autor.perfil.perfil_imagen.url }}">
+    <div class="card mb-3" >
+    <div class="row g-0">
+        <div class="col-md-2">
+{% if object.autor.perfil.perfil_imagen %}
+
+    <img src="{{ object.autor.perfil.perfil_imagen.url }}" class="card-img" >
+
+{% else %}
+
+    <img src="https://180dc.org/wp-content/uploads/2016/08/default-profile.png" class="card-img" >
+    
+{% endif %}
+        </div>
+        <div class="col-md-10">
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ object.autor.first_name}}
+                {{object.autor.last_name}}
+            </h5>
+            <p class= "small text-muted">
+            
+            {% if object.autor.perfil.web_url %}
+                <a href="{{ object.autor.perfil.web_url }}">My web </a> |
+            {% endif %}
+
+            {% if object.autor.perfil.fb_url %}
+                <a href="{{ object.autor.perfil.fb_url }}">Facebook </a> |
+            {% endif %} 
+
+            {% if object.autor.perfil.Twitter_url %}
+                <a href="{{ object.autor.perfil.Twitter_url }}">Twitter </a> |
+            {% endif %}  
+
+            {% if object.autor.perfil.Instagram_url %}
+                <a href="{{ object.autor.perfil.Instagram_url }}">Instagram </a> |
+            {% endif %}  
+            
+            {% if object.autor.perfil.github_url %}
+                <a href="{{ object.autor.perfil.github_url }}">Github </a> 
+            {% endif %}
+
+            </p>
+            <p class="card-text">{{ object.autor.perfil.bio }}</p> 
+        </div>
+        </div>
+    </div>
+    </div>
+
+
 
 {% endblock %}
  

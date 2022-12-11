@@ -21,22 +21,22 @@ class PostDetail(DetailView):
    model = Post
    template_name = 'appblog/detail_post.html'
 
-class PostCreate(PermissionRequiredMixin, CreateView):
-    permission_required = 'appblog.add_Post'
+class PostCreate( CreateView):
+    #permission_required = 'appblog.add_Post'
     model = Post
     success_url = ""
     fields = "__all__"
     template_name = "appblog/Post_form.html"
 
 
-class PostUpdate(PermissionRequiredMixin, UpdateView):
-    permission_required = 'appblog.change_Post'
+class PostUpdate( UpdateView):
+    #permission_required = 'appblog.change_Post'
     model = Post
     success_url = ""
     fields = "__all__"
 
-class PostDelate(PermissionRequiredMixin, DeleteView):
-    permission_required = 'appblog.delete_Post'
+class PostDelate( DeleteView):
+    #permission_required = 'appblog.delete_Post'
     model = Post
     template_name = "appblog/Post_confirm_delete.html"
     success_url = reverse_lazy("inicio")
