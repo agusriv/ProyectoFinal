@@ -4,6 +4,7 @@ from appblog.models import Post
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponseForbidden
+from appblog.models import Comment
 
 
 
@@ -22,7 +23,6 @@ class PostDetail(DetailView):
    template_name = 'appblog/detail_post.html'
 
 class PostCreate( CreateView):
-    #permission_required = 'appblog.add_Post'
     model = Post
     success_url = ""
     fields = "__all__"
@@ -30,14 +30,17 @@ class PostCreate( CreateView):
 
 
 class PostUpdate( UpdateView):
-    #permission_required = 'appblog.change_Post'
     model = Post
     success_url = ""
     fields = "__all__"
 
-class PostDelate( DeleteView):
-    #permission_required = 'appblog.delete_Post'
+class PostDelate( DeleteView):  
     model = Post
     template_name = "appblog/Post_confirm_delete.html"
     success_url = reverse_lazy("inicio")
    
+class CommentCreate( CreateView):
+
+    model = Comment
+    template_name = "appblog/add_comment.html"
+    fields = "__all__"
