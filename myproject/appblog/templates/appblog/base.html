@@ -41,8 +41,13 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Editar Configuraciones</a></li>
-                  <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.perfil.id %}">Editar perfil</a></li>
-                  <li><a class="dropdown-item" href="{% url 'show_profile' user.perfil.id %}">Tu perfil</a></li>
+                  
+                  {% if user.perfil.id %}
+                    <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.perfil.id %}">Editar perfil</a></li>
+                    <li><a class="dropdown-item" href="{% url 'show_profile' user.perfil.id %}">Tu perfil</a></li>
+                  {% else %}
+                    <li><a class="dropdown-item" href="{% url 'create_profile_page' %}">Crear perfil</a></li>
+                  {% endif %}
                 </ul>
               </li>
 
