@@ -1,9 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-from datetime import datetime, date
 from ckeditor.fields import RichTextField
-# Create your models here.
 
 class Post(models.Model):
     titulo = models.CharField(max_length=60)
@@ -32,7 +30,7 @@ class Perfil(models.Model):
     
 
     def __str__(self):
-        return str(self.user)
+        return f"{self.user}"
     
     def get_absolute_url(self):
         return reverse ('inicio')
@@ -45,7 +43,7 @@ class Comment(models.Model):
     date_added = models.DateField(auto_now_add=True)
     
     def __str__(self) :
-       return '%s - %s' % (self.post.titulo, self.name)
+       return f"{self.post.titulo.upper()}, {self.name.capitalize()}"
 
     
 

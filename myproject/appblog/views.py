@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from appblog.models import Post
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.http import HttpResponseForbidden
 from appblog.models import Comment
 from appblog.forms import CommentForm
 

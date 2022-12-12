@@ -1,7 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
-from appblog.models import Perfil
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField()
@@ -18,9 +17,6 @@ class EditProfileForm(UserChangeForm):
     last_name = forms.CharField(max_length=100)
     username = forms.CharField(max_length=100)
     last_login = forms.CharField(max_length=100)
-    #is_superuser = forms.CharField(max_length=100)
-    #is_staff = forms.CharField(max_length=100)
-    #is_active = forms.CharField(max_length=100)
     date_joined = forms.CharField(max_length=100)
 
     class Meta:
