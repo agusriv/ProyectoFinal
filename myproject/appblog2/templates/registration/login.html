@@ -8,12 +8,20 @@ Login
 
 
 <h1> Login... </h1>
-<form method="post">
+<div class="mb-3">
+    <form method="post">
 
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Login">
-</form>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+
+        <br><br/>
+        No tienes cuenta? <a href="{% url 'register' %}">Registrate</a>
         
-</div>
+    </form>
+    
+
+
+        
+
 {% endblock %}
