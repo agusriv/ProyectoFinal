@@ -8,4 +8,4 @@ Con respecto al proyecto, decidí trabajar basandome en vistas basadas en clases
 
 ## Video de la pagina web
 
-Link: https://drive.google.com/file/d/1UlQgXWLMCqC34PJxbiVt7Hb9IkCmBx2Y/view?usp=sharing
+Link: https://1drv.ms/v/s!AqmjOmyw9Jln2202VslWg78Ht9An?e=kH91oz
