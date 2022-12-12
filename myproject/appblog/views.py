@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponseForbidden
 from appblog.models import Comment
+from appblog.forms import CommentForm
 
 
 
@@ -38,9 +39,16 @@ class PostDelate( DeleteView):
     model = Post
     template_name = "appblog/Post_confirm_delete.html"
     success_url = reverse_lazy("inicio")
+    
    
 class CommentCreate( CreateView):
 
     model = Comment
+    form_class = CommentForm
     template_name = "appblog/add_comment.html"
-    fields = "__all__"
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    success_url = reverse_lazy("inicio")

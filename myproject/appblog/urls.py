@@ -10,5 +10,5 @@ urlpatterns = [
     path('add_post/', PostCreate.as_view(), name="agregar-post"),
     path('editar/post/<pk>',PostUpdate.as_view(), name="actualizar-post" ),
     path("borrar/post/<pk>/", PostDelate.as_view(), name="borrar-post"),
-    path('<pk>/add_comentario/', CommentCreate.as_view(), name="agregar-comentario"),
+    path('post/<pk>/comment/', CommentCreate.as_view(), name="agregar-comentario"),
 ]
