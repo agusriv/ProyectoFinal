@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.generic import DetailView, CreateView
-from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
-from appblog2.forms import SignUpForm, EditProfileForm, PasswordChangingForm, ProfilePgeForm
+from appblog2.forms import SignUpForm, EditProfileForm, PasswordChangingForm
 from appblog.models import Perfil
 
 
@@ -53,7 +52,6 @@ class EditProfilePageView(generic.UpdateView):
 
 class CreateProfilePgeView(CreateView):
     model = Perfil
-    #form_class = ProfilePgeForm
     template_name = "registration/create_user_profile_page.html"
     fields = '__all__'
 

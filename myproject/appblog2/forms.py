@@ -3,11 +3,6 @@ from django.contrib.auth.models import User
 from django import forms
 from appblog.models import Perfil
 
-class ProfilePgeForm(forms.ModelForm):
-    class Meta:
-        model = Perfil
-        fields = ('bio', 'perfil_imagen', 'Instagram_url', 'github_url', 'fb_url', 'web_url', 'Twitter_url')
-
 class SignUpForm(UserCreationForm):
     email = forms.EmailField()
     first_name = forms.CharField(max_length=100)
