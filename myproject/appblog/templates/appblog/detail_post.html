@@ -34,6 +34,32 @@
 
 <br/><br/>
 
+<hr>
+<h2> Comentarios...</h2>
+<b></b>
+{% if not post.comments.all %}
+
+<br>
+    No hay comentarios aún... 
+    <br>
+    <a href="#" >Agregar uno</a>
+<hr>
+<br>
+
+{% else %}
+    {% for comment in post.comments.all %}
+        <strong>
+            {{ comment.name}} -
+            {{ comment.date_added}}
+        </strong>
+        <br>
+        {{ comment.body}}
+        <br/><br/>
+        <hr>
+    {% endfor %}
+{% endif %}
+<br>
+
     <div class="card mb-3" >
     <div class="row g-0">
         <div class="col-md-2">
@@ -84,7 +110,6 @@
         </div>
     </div>
     </div>
-
 
 
 {% endblock %}

@@ -7,17 +7,23 @@ Crea un nuevo post!
 {% block contenido %}
 
 {% if request.user.is_authenticated %}
-    
-    <h1> Agregar Posts... </h1>
-    <form method="post" enctype="multipart/form-data">
+    {% if perms.appblog.add_post %}
+        <h1> Agregar Posts... </h1>
+        <form method="post" enctype="multipart/form-data">
 
-    {% csrf_token %}
-    {{form.media}}
-    {{form.as_p }}
-    <input type="submit" value="Crear/Actualizar">
-    </form>
+        {% csrf_token %}
+        {{form.media}}
+        {{form.as_p }}
+        <input type="submit" value="Crear/Actualizar">
+        </form>
         
-    </div>
+        </div>
+    
+    {% else %}
+
+        <p>No tienes permisos de administrador </p>
+        <a href="{% url 'inicio'%}">Volver al listado</a><br/>
+    {% endif %}
     
 {% else %}
 
@@ -26,3 +32,4 @@ No has iniciado sesion
 {% endif %}
 
 {% endblock %}
+

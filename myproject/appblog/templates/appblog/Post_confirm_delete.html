@@ -7,21 +7,27 @@ Borrar post
 {% block contenido %}
 
 {% if request.user.is_authenticated %}
+    {% if perms.appblog.delete_post %}
     
-    
-    <h1> Borrar Post... </h1>
-    <br/>
-    <h3> Borrar: {{object.titulo}}</h3>
+        <h1> Borrar Post... </h1>
+        <br/>
+        <h3> Borrar: {{object.titulo}}</h3>
 
-    <form method="post">
-        {% csrf_token %}
-        <strong> Estas seguro que quieres borrar el post?</strong>
-        <a href="{% url 'inicio'%}">Volver al listado</a><br/>
-        <input type="submit" value="Borrar">
+        <form method="post">
+            {% csrf_token %}
+            <strong> Estas seguro que quieres borrar el post?</strong>
+            <a href="{% url 'inicio'%}">Volver al listado</a><br/>
+            <input type="submit" value="Borrar">
             
-    </form>
+        </form>
                 
-    </div>
+        </div>
+    
+    {% else %}
+
+        <p>No tienes permisos de administrador </p>
+        <a href="{% url 'inicio'%}">Volver al listado</a><br/>
+    {% endif %}
 
 {% else %}
     No has iniciado sesion
